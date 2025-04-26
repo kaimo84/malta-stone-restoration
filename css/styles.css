@@ -1,0 +1,48 @@
+<style>
+  body {
+    background-color: #d0f0f7; /* Light blue background */
+    color: #C2B280; /* Sand color text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header, footer {
+    background-color: #333;
+    color: #C2B280; /* Sand color in header/footer */
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  nav a {
+    margin: 0 15px;
+    color: #C2B280;
+    text-decoration: none;
+  }
+
+  section {
+    padding: 2em;
+    border-bottom: 1px solid #bbb;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  input[type="number"] {
+    padding: 0.5em;
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .gallery img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 8px;
+  }
+</style>
