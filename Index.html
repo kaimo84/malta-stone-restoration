@@ -43,11 +43,87 @@
 
   <section id="quote">
     <h2>Get a Quote</h2>
-    <p><strong>Pointing of Walls</strong> at €20 per sqm</p>
-    <label for="sqm">Enter Area (sqm):</label>
-    <input type="number" id="sqm" oninput="calculateTotal()" />
-    <p id="total">Total: €0.00</p>
-  </section>
+    <p>Below are the services we offer with their respective rates:</p>
+    
+    <label for="wetBrushing">Wet Brushing (4 EUR/sqm):</label>
+    <input type="number" id="wetBrushing" oninput="calculateTotal()" placeholder="Enter area (sqm)" />
+    <p id="totalWetBrushing">Total: €0.00</p>
+
+    <label for="dryBrushing">Dry Brushing (2.5 EUR/sqm):</label>
+    <input type="number" id="dryBrushing" oninput="calculateTotal()" placeholder="Enter area (sqm)" />
+    <p id="totalDryBrushing">Total: €0.00</p>
+
+    <label for="openingJoints">Opening Joints (3.5 EUR/sqm):</label>
+    <input type="number" id="openingJoints" oninput="calculateTotal()" placeholder="Enter area (sqm)" />
+    <p id="totalOpeningJoints">Total: €0.00</p>
+
+    <label for="pointing">Pointing (17 EUR/sqm):</label>
+    <input type="number" id="pointing" oninput="calculateTotal()" placeholder="Enter area (sqm)" />
+    <p id="totalPointing">Total: €0.00</p>
+
+    <label for="stoneChanging">Stone Changing (200 EUR/sqm):</label>
+    <input type="number" id="stoneChanging" oninput="calculateTotal()" placeholder="Enter area (sqm)" />
+    <p id="totalStoneChanging">Total: €0.00</p>
+
+    <label for="paint">Paint 2 Coats Labour (5 EUR/sqm):</label>
+    <input type="number" id="paint" oninput="calculateTotal()" placeholder="Enter area (sqm)" />
+    <p id="totalPaint">Total: €0.00</p>
+
+    <label for="scaffolding">Scaffolding (15 EUR/sqm):</label>
+    <input type="number" id="scaffolding" oninput="calculateTotal()" placeholder="Enter area (sqm)" />
+    <p id="totalScaffolding">Total: €0.00</p>
+
+    <h3>Total: €<span id="grandTotal">0.00</span></h3>
+</section>
+
+<script>
+    function calculateTotal() {
+        // Define rates for each task
+        const rates = {
+            wetBrushing: 4,
+            dryBrushing: 2.5,
+            openingJoints: 3.5,
+            pointing: 17,
+            stoneChanging: 200,
+            paint: 5,
+            scaffolding: 15
+        };
+
+        // Get area input values and calculate totals
+        const wetBrushingArea = parseFloat(document.getElementById('wetBrushing').value) || 0;
+        const dryBrushingArea = parseFloat(document.getElementById('dryBrushing').value) || 0;
+        const openingJointsArea = parseFloat(document.getElementById('openingJoints').value) || 0;
+        const pointingArea = parseFloat(document.getElementById('pointing').value) || 0;
+        const stoneChangingArea = parseFloat(document.getElementById('stoneChanging').value) || 0;
+        const paintArea = parseFloat(document.getElementById('paint').value) || 0;
+        const scaffoldingArea = parseFloat(document.getElementById('scaffolding').value) || 0;
+
+        // Calculate total for each task
+        const totalWetBrushing = wetBrushingArea * rates.wetBrushing;
+        const totalDryBrushing = dryBrushingArea * rates.dryBrushing;
+        const totalOpeningJoints = openingJointsArea * rates.openingJoints;
+        const totalPointing = pointingArea * rates.pointing;
+        const totalStoneChanging = stoneChangingArea * rates.stoneChanging;
+        const totalPaint = paintArea * rates.paint;
+        const totalScaffolding = scaffoldingArea * rates.scaffolding;
+
+        // Display individual totals
+        document.getElementById('totalWetBrushing').textContent = `Total: €${totalWetBrushing.toFixed(2)}`;
+        document.getElementById('totalDryBrushing').textContent = `Total: €${totalDryBrushing.toFixed(2)}`;
+        document.getElementById('totalOpeningJoints').textContent = `Total: €${totalOpeningJoints.toFixed(2)}`;
+        document.getElementById('totalPointing').textContent = `Total: €${totalPointing.toFixed(2)}`;
+        document.getElementById('totalStoneChanging').textContent = `Total: €${totalStoneChanging.toFixed(2)}`;
+        document.getElementById('totalPaint').textContent = `Total: €${totalPaint.toFixed(2)}`;
+        document.getElementById('totalScaffolding').textContent = `Total: €${totalScaffolding.toFixed(2)}`;
+
+        // Calculate grand total
+        const grandTotal = totalWetBrushing + totalDryBrushing + totalOpeningJoints + totalPointing + totalStoneChanging + totalPaint + totalScaffolding;
+
+        // Display grand total
+        document.getElementById('grandTotal').textContent = grandTotal.toFixed(2);
+    }
+</script>
+
 
   <section id="gallery">
     <h2>Gallery</h2>
